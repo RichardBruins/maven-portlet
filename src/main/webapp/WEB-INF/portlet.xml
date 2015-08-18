@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<portlet-app
+	version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+>
+	<portlet>
+		<portlet-name>maven-portlet</portlet-name>
+		<display-name>Maven Portlet</display-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<!-- <init-param>
+			<name>contextConfigLocation</name>
+			<value>
+				/WEB-INF/applicationContext.xml
+			</value>
+		</init-param> -->
+		<init-param>
+            <name>edit-jsp</name>
+            <value>/WEB-INF/jsp/maven/editForm.jsp</value>
+        </init-param>		
+		<expiration-cache>0</expiration-cache>
+		<cache-scope>private</cache-scope>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>maven-portlet</title>
+			<short-title>maven-portlet</short-title>
+			<keywords>maven-portlet</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	<supported-processing-event>
+			<qname xmlns:n="localhost:8080">n:searchBookEvent</qname>
+		 </supported-processing-event>
+	</portlet>
+
+	<portlet>
+		<portlet-name>search-book</portlet-name>
+		<display-name>Search Book</display-name>
+		<portlet-class>
+			org.springframework.web.portlet.DispatcherPortlet
+		</portlet-class>
+		<expiration-cache>0</expiration-cache>
+		<cache-scope>private</cache-scope>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Search Book</title>
+			<short-title>Search Book</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+			<qname xmlns:n="localhost:8080">n:searchBookEvent</qname>
+		</supported-processing-event>
+	</portlet>
+	
+		<event-definition>
+	    	<qname xmlns:n="localhost:8080">n:searchBookEvent</qname>
+	    	<value-type>java.lang.String</value-type>
+	    </event-definition>	
+	
+	
+
+</portlet-app>

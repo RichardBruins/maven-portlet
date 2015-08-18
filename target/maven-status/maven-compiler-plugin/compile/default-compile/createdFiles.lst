@@ -1,0 +1,6 @@
+com\xtivia\book\BookInMemoryDAOImpl.class
+com\xtivia\book\Book.class
+com\xtivia\book\BookManager.class
+com\xtivia\book\portlet\Configuration.class
+com\xtivia\book\controller\BookPortletController.class
+com\xtivia\book\BookDAOInterface.class
